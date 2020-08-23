@@ -7,7 +7,9 @@ Tested on Raspberrt Pi Zero W
 ## Requirements
 
 Install nodejs for pi zero w (armv6l)
-Post: https://nodejs.org/dist/latest-v11.x/
+
+Post: https://medium.com/@tgmarinho/how-to-install-node-js-via-binary-archive-on-linux-ab9bbe1dd0c2
+
 Download: https://nodejs.org/dist/latest-v11.x/
 
 The NodeJS modules required are pretty much just `underscore`, `async`, and `express`. 
@@ -21,7 +23,7 @@ If you do not have `bower` installed already, you can install it globally by run
 
 
 ```sh
-$git clone https://github.com/sabhiram/raspberry-wifi-conf.git
+$git clone https://github.com/binh8994/raspberrypi-zero-w-wifi-conf.git raspberry-wifi-conf
 $cd raspberry-wifi-conf
 $npm update
 $bower install
