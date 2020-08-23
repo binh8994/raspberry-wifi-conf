@@ -2,21 +2,13 @@
 
 A Node application which makes connecting your RaspberryPi to your home wifi easier.
 
-Tested on Stretch and Raspberrt Pi 3
-
-## RPI 4 Note:
-
-I realize that a bunch of folks will try this out using the shiny new RaspberryPi v4. I caution you that this is not something I have tried, I believe this was tested on a Pi3 to success. However, if you find that this works on a Pi4, please let me know and I will adjust the readme accordingly. If it does not work, it is probably a few PRs away from success :)
-
-## Why?
-
-When unable to connect to a wifi network, this service will turn the RPI into a wireless AP. This allows us to connect to it via a phone or other device and configure our home wifi network (for example).
-
-Once configured, it prompts the PI to reboot with the appropriate wifi credentials. If this process fails, it immediately re-enables the PI as an AP which can be configurable again.
-
-This project broadly follows these [instructions](https://www.raspberrypi.org/documentation/configuration/wireless/access-point.md) in setting up a RaspberryPi as a wireless AP.
+Tested on Raspberrt Pi Zero W
 
 ## Requirements
+
+Install nodejs for pi zero w (armv6l)
+Post: https://nodejs.org/dist/latest-v11.x/
+Download: https://nodejs.org/dist/latest-v11.x/
 
 The NodeJS modules required are pretty much just `underscore`, `async`, and `express`. 
 
@@ -25,6 +17,8 @@ The web application requires `angular` and `font-awesome` to render correctly. T
 If you do not have `bower` installed already, you can install it globally by running: `sudo npm install bower -g`.
 
 ## Install
+
+
 
 ```sh
 $git clone https://github.com/sabhiram/raspberry-wifi-conf.git
@@ -99,13 +93,13 @@ sudo /usr/bin/node server.js < /dev/null &
 
 ## User Interface
 
-In my config file, I have set up the static ip for my PI when in AP mode to `192.168.44.1` and the AP's broadcast SSID to `rpi-config-ap`. These are images captured from my osx dev box.
+In my config file, I have set up the static ip for my PI when in AP mode to `192.168.80.1` and the AP's broadcast SSID to `rpi-config-ap`. These are images captured from my osx dev box.
 
 Step 1: Power on Pi which runs this app on startup (assume it is not configured for a wifi connection). Once it boots up, you will see `rpi-config-ap` among the wifi connections.  The password is configured in config.json.
 
 <img src="https://raw.githubusercontent.com/sabhiram/public-images/master/raspberry-wifi-conf/wifi_options.png" width="200px" height="160px" />
 
-Step 2: Join the above network, and navigate to the static IP and port we set in config.json (`http://192.168.44.1:88`), you will see:
+Step 2: Join the above network, and navigate to the static IP and port we set in config.json (`http://192.168.80.1:8080`), you will see:
 
 <img src="https://raw.githubusercontent.com/sabhiram/public-images/master/raspberry-wifi-conf/ui.png" width="404px" height="222px" />
 
