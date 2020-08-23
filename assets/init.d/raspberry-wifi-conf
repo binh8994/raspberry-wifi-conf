@@ -21,7 +21,7 @@ case "$1" in
     ;;
   stop)
     echo "Stopping raspberry-wifi-conf service"
-    PIDFile=/home/pi/raspberry-wifi-conf/node.pid
+    PIDFile=/opt/raspberry-wifi-conf/node.pid
     if [ -f $PIDFile ]; then
         sudo kill -9 $(cat $PIDFile)
         sudo kill -9 $(($(cat $PIDFile) + 1))
