@@ -35,9 +35,14 @@ $cd raspberry-wifi-conf
 $npm update
 $bower install
 $sudo npm run-script provision
+$sudo nano /etc/default/hostapd
+```
+Modify like this:
+DAEMON_CONF="/etc/hostapd/hostapd.conf"
+
+```sh
 $sudo npm start
 ```
-
 
 ## Setup the app as a service
 
